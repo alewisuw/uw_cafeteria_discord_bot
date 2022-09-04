@@ -16,7 +16,10 @@ async def on_ready():
     print(f'We have logged in as {client.user}')
 
     today = str(datetime.date.today())
-    channel = client.get_channel(996576344840359977)
+    channel = client.get_channel(975940259818930206)
+    day_of_week = datetime.date.today().weekday()
+    if day_of_week >= 5:
+            os._exit(0) # other exit/quit methods create an error message from asyncio
     menus = get_menu(today)
     msg = ""
     newline = "\n"
