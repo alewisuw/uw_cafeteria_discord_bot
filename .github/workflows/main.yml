@@ -30,4 +30,6 @@ jobs:
         run: pip install -r requirements.txt
       # Run 
       - name: run
+        env: CLIENT: ${{ secrets.CLIENT }}
         run: python bot.py
+        
