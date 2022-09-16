@@ -19,6 +19,7 @@ async def on_ready():
     channel = client.get_channel(975940259818930206)
     day_of_week = datetime.date.today().weekday()
     if day_of_week >= 5:
+            await channel.send("No menu posted on weekends, come find out :smiling_imp: ")
             os._exit(0) # other exit/quit methods create an error message from asyncio
     menus = get_menu(today)
     msg = ""
