@@ -24,10 +24,13 @@ def get_menu(date):
                 cmh.append(re.sub(' +', ' ', link_text))
                 count+=1
             elif count > 6:
-                v1.append(re.sub(' +', ' ', link_text))
+                res = re.search(r'"(.*?)"', str(link))
+                res = (res.group(1))
+                v1.append(f"[{re.sub(' +', ' ', link_text)}](<https://uwaterloo.ca/{res}>)")
                 if link_text[:5] == "Build":
                     break
                 count+=1
+    print(v1)
     return [cmh, v1]
 
 get_menu("2022-02-11")
